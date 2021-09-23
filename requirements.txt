@@ -2,7 +2,6 @@ matplotlib
 tqdm
 numpy
 h5py
-open3d
 plyfile
 termcolor
 torchnet
