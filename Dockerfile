@@ -10,4 +10,4 @@ RUN export http_proxy="" &&  export https_proxy="" && apt-get update && apt-get 
     
 WORKDIR /workspace
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
