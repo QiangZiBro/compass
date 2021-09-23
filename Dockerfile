@@ -9,5 +9,5 @@ RUN export http_proxy="" &&  export https_proxy="" && apt-get update && apt-get 
     && rm -rf /var/lib/apt/lists/*
     
 WORKDIR /workspace
-COPY requirements.yml .
-RUN conda env update --file requirements.yml --prune
+COPY requirements.txt .
+RUN conda env update --file requirements.txt --prune
