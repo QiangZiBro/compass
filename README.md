@@ -71,6 +71,10 @@ test.csv
 ply_data_test0.h5
 ply_data_test1.h5
 ```
+:rocket: start to train
+```bash
+./batches/train_compass_ModelNet_example.sh
+```
 
 #### 3DMatch
 To train a new network from scratch on 3DMatch, run:
