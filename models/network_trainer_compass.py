@@ -262,7 +262,6 @@ class CompassNetworkTrainer(nt.NetworkTrainer):
 
     def do_step_fwd(self, data):
         signal, pts_input, signal_rot_rnd, pts_input_rot_rnd, mats_rot_rnd, name_samples = data
-
         # Step
         signal = signal.to(self.device)
         signal_rot_rnd = signal_rot_rnd.to(self.device)

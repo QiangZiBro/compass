@@ -36,13 +36,8 @@ python setup.py install
 ```bash
 # Install pybind
 sudo apt-get install python3-pybind11
-```
-
-```bash
 cd  utils/spherical_voxel/
-python3 setup.py develop
-# The test will fail
-python3 -m unittest utils/test_geometry.py 
+python3 setup.py clean develop install
 ```
 
 ## How To
@@ -58,6 +53,58 @@ Before starting to train, execute:
 python -m visdom.server -p 8888
 ```
 This will start a Visdom server, accessible at `localhost:8888` to monitor the training. If you use a different port, remember to specify it in the following scripts with `--port_vis`.
+## modelnet40
+- Get modelnet40 dataset
+```bash
+wget https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip  --no-check-certificate 
+```
+train.csv
+```csv
+ply_data_train0.h5
+ply_data_train1.h5
+ply_data_train2.h5
+ply_data_train3.h5
+ply_data_train4.h5
+```
+test.csv
+```csv
+ply_data_test0.h5
+ply_data_test1.h5
+```
+:rocket: train
+```bash
+python apps/train_classification_pointnet.py
+--dataset
+data/modelnet40
+--nepoch=150
+--dataset_type
+modelnet40
+--outf
+logs/PointNet/classification_compass-2021-09-24_10-50/
+--batchSize
+50
+--num_points
+2048
+--workers
+8
+--feature_transform
+0
+--rotate_axis
+all
+--debug
+0
+--arbitrary_rotations
+0
+--path_ckp_layer_lrf
+pretrained_models/modelnet40/lrf_layer.pkl
+--path_ckp_layer_s2
+pretrained_models/modelnet40/s2_layer.pkl
+--file_list_train
+data/modelnet40/train.csv
+--file_list_test
+data/modelnet40/test.csv
+```
+
 
 To train a new network from scratch on 3DMatch, run:
 ```

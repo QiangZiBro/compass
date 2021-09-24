@@ -4,15 +4,13 @@ import sys
 sys.path.append(".")
 import os
 import random
-import torch
-import torch.nn.parallel
+import open3d # open3d must be imported before pytorch https://github.com/pytorch/pytorch/issues/19739
 import torch.optim as optim
 import torch.utils.data
-from dataloader.dataset_pointnet import ModelNetDataset
+from dataloader import ModelNetDataset
 from models.network_trainer_pointnet import PointNetCls, feature_transform_regularizer
 import torch.nn.functional as F
 from tqdm import tqdm
-
 from features import lrf_compass_object as compass
 from utils import torch as utor
 from utils import geometry as ug

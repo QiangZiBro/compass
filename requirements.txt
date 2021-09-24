@@ -1,18 +1,7 @@
-matplotlib
-tqdm
-numpy
-h5py
+open3d
+PyYaml
 plyfile
+h5py
+visdom
 termcolor
 torchnet
-visdom
-PyYAML --install-option="--ignore-installed"
-lie_learn
-tensorboardX
-pynvrtc
-joblib
-trimesh[easy]
-pysnooper
-trimesh
-monty
-git+https://github.com/QiangZiBro/s2cnn

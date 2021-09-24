@@ -293,6 +293,7 @@ class NetworkTrainer(ABC):
         The name of the saved file is name_train.json
         """
         self.visualizer.save([self.args.name_train])
+        # print(os.path.join(os.path.expanduser('~'), ".visdom", self.args.name_train+".json"), self.visualizer_save_folder)
         shutil.copy2(os.path.join(os.path.expanduser('~'), ".visdom", self.args.name_train+".json"), self.visualizer_save_folder)
 
     @abstractmethod

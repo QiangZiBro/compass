@@ -9,6 +9,7 @@ import os.path
 import torch
 import numpy as np
 
+
 class ModelNetDataset(data.Dataset):
     def __init__(self,
                  root,

@@ -1,0 +1,41 @@
+name: caps3d
+channels:
+    - defaults
+dependencies:
+    - pytorch==1.2.0
+    - torchvision
+    - python=3.7
+    - pandas
+    - mkl_fft
+    - mkl_random
+    - numpy
+    - cupy
+    - cython
+    - requests
+    - scipy
+    - rtree
+    - shapely
+    - pylint
+    - pip
+    - pip:
+        - mayavi
+        - matplotlib
+        - lie_learn
+        - tensorboardX
+        - tqdm
+        - pynvrtc
+        - joblib
+        - trimesh[easy]
+        - pysnooper
+        - scikit-learn
+        - trimesh
+        - monty
+        - tqdm
+        - git+https://github.com/QiangZiBro/s2cnn@c4fcf26d9f3856c97aa04a721822d1628664e284
+        - open3d
+        - PyYaml
+        - plyfile
+        - h5py
+        - visdom
+        - termcolor
+        - torchnet
