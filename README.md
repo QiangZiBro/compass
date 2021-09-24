@@ -53,7 +53,7 @@ Before starting to train, execute:
 python -m visdom.server -p 8888
 ```
 This will start a Visdom server, accessible at `localhost:8888` to monitor the training. If you use a different port, remember to specify it in the following scripts with `--port_vis`.
-## modelnet40
+#### modelnet40
 - Get modelnet40 dataset
 ```bash
 wget https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip  --no-check-certificate 
@@ -71,46 +71,19 @@ test.csv
 ply_data_test0.h5
 ply_data_test1.h5
 ```
-:rocket: train
-```bash
-python apps/train_classification_pointnet.py
---dataset
-data/modelnet40
---nepoch=150
---dataset_type
-modelnet40
---outf
-logs/PointNet/classification_compass-2021-09-24_10-50/
---batchSize
-50
---num_points
-2048
---workers
-8
---feature_transform
-0
---rotate_axis
-all
---debug
-0
---arbitrary_rotations
-0
---path_ckp_layer_lrf
-pretrained_models/modelnet40/lrf_layer.pkl
---path_ckp_layer_s2
-pretrained_models/modelnet40/s2_layer.pkl
---file_list_train
-data/modelnet40/train.csv
---file_list_test
-data/modelnet40/test.csv
-```
 
-
+#### 3DMatch
 To train a new network from scratch on 3DMatch, run:
 ```
 python apps/train_compass.py --config_file configs/train_3dm.yaml --name_train <name> --path_log <path to log dir> --path_ds <path to dataset> --name_file_folder_train <CSV file with training split> --name_file_folder_validation <CSV file with val split>
 ```
+
+#### StanfordViews
+
 In `configs` there are pre-configured settings for StanfordViews and ETH as well.
+
+#### ETH
+
 
 To produce the test-time adaptation you need to load a base model (e.g. trained with 3DMatch) and train it with the config file corresponding to the dataset you want to adapt to, specifying the additional command line arguments to load the base model:
 ```
