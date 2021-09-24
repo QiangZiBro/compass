@@ -1,4 +1,4 @@
-name: caps3d
+name: compass
 channels:
     - defaults
 dependencies:
