@@ -1,0 +1,8 @@
+open3d
+PyYaml
+flyfile
+h5py
+visdom
+ termcolor
+
+torchnet

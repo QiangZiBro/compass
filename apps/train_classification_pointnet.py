@@ -1,5 +1,7 @@
 from __future__ import print_function
 import argparse
+import sys
+sys.path.append(".")
 import os
 import random
 import torch

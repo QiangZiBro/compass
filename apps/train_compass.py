@@ -1,5 +1,7 @@
 import argparse
 import yaml
+import sys
+sys.path.append(".")
 from models import network_trainer_compass as ntc
 
 
@@ -7,7 +9,7 @@ def parse_commandline():
     parser = argparse.ArgumentParser(description="Compass Network training arguments.")
 
     """Training"""
-    parser.add_argument("--config_file", type=str, required=True, help="Configuration file for training.")
+    parser.add_argument("--config_file", type=str, default="", help="Configuration file for training.")
     parser.add_argument("--name_train", type=str, required=True, help="Name of the training.")
     parser.add_argument("--path_log", type=str, required=True, help="Path to log directory.")
 

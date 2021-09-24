@@ -1,4 +1,6 @@
 from __future__ import print_function
+from utils import geometry as ug
+from utils import io as uio
 import torch.utils.data as data
 import os
 import csv
@@ -6,8 +8,6 @@ import glob
 import os.path
 import torch
 import numpy as np
-from utils import geometry as ug
-from utils import io as uio
 
 class ModelNetDataset(data.Dataset):
     def __init__(self,
