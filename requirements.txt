@@ -13,7 +13,6 @@ pynvrtc
 joblib
 trimesh[easy]
 pysnooper
-scikit-learn
 trimesh
 monty
 git+https://github.com/QiangZiBro/s2cnn
