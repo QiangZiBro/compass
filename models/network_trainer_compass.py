@@ -267,15 +267,12 @@ class CompassNetworkTrainer(nt.NetworkTrainer):
         signal_rot_rnd = signal_rot_rnd.to(self.device)
 
         so3_signal = self.layer_s2(signal)
-
         so3_signal_rot_rnd = self.layer_s2(signal_rot_rnd)
 
         _, lrfs = self.layer_lrf(so3_signal)
-
         feature_map_trg, lrfs_rnd = self.layer_lrf(so3_signal_rot_rnd)
 
         mats_rot_rnd = mats_rot_rnd.to(device=self.device).float()
-
         lrfs_expected = torch.bmm(lrfs, mats_rot_rnd.transpose(2, 1))
 
         d_res_fwd = {'lrfs': lrfs,

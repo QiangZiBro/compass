@@ -52,7 +52,7 @@ def spherical_voxel_optimized(points: np.ndarray, size_bandwidth: int, size_radi
     """Compute spherical voxel using the C++ code.
 
     Compute Spherical Voxel signal as defined in:
-    Pointwise Rotation-Invariant Network withAdaptive Sampling and 3D Spherical Voxel Convolution.
+    Pointwise Rotation-Invariant Network with Adaptive Sampling and 3D Spherical Voxel Convolution.
     Yang You, Yujing Lou, Qi Liu, Yu-Wing Tai, Weiming Wang, Lizhuang Ma and Cewu Lu.
     AAAI 2020.
 

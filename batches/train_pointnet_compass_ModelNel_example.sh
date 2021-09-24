@@ -27,7 +27,7 @@ debug=0
 checkpoint=25200
 train_name="2020-05-26_09-39-Train_btw24_near_sonic_3laySO3_ModelNet_no_augmentation"
 # To enable test mode, define the pre-trained classifier weights path and set --path_pointnet parameter
-#path_pointnet="/media/mmarcon/data/Train_SOUND/PointNet/Train_classification_PointNet_plain_with_no_augmented_point_on_feature_off_plain-2020-08-12_11-42/cls_model_149.pth"
+path_pointnet="logs/PointNet/classification_compass-2021-09-24_16-26/cls_model_149.pth"
 
 file_train="$data_path/train.csv"
 file_test="$data_path/test.csv"
@@ -38,5 +38,5 @@ python apps/train_classification_pointnet.py --dataset $data_path --nepoch=$n_ep
                                                 --workers 8 --feature_transform $feature_transform \
                                                 --rotate_axis $rotate_axis --debug $debug --arbitrary_rotations $AR \
                                                 --path_ckp_layer_lrf $path_lrf --path_ckp_layer_s2 $path_s2 \
-                                                --file_list_train $file_train --file_list_test $file_test
+                                                --file_list_train $file_train --file_list_test $file_test  
                                                 #--path_pointnet $path_pointnet
