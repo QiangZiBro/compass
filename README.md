@@ -35,7 +35,7 @@ python setup.py install
 ### Instal and Test Spherical Voxelization
 ```bash
 # Install pybind
-sudo apt-get install python-pybind11
+sudo apt-get install python3-pybind11
 ```
 
 ```bash
